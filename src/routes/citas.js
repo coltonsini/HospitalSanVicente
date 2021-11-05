@@ -38,4 +38,20 @@ router.get('/citas', isAuthenticated, async (req, res) => {
     res.render('/citas/todas-citas', { citas });
 });
 
+router.get('/citas/edit/:id', async (req, res) => {
+    const cita = await Cita.findById(req.params.id);
+    res.render('citas/edit-note', {cita});
+});
+
+router.put('/citas/edit-cita/:id', async (req, res) => {
+    const {title, description} = req.body;
+    await Cita.findByIdAndUpdate(req.params.id, { title, description});
+    res.redirect('/citas');
+})
+
+router.delete('/citas/eliminar/:id', (req, res) => {
+    Cita.findByIdAndDelete(req.params.id);
+    res.redirect('/citas');
+});
+
 module.exports = router;
