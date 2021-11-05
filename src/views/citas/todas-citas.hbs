@@ -1,0 +1,24 @@
+<div class="row">
+    {{#each citas}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-betweeen align-items-center">
+                    {{tittle}} <a href="#"><i class="fas fa-edit"></i></a>
+                </h4>
+                <p> {{description}}</p>
+                <button class="btn btn-danger btn-block btn-sm">
+                    Cancelar Cita
+                </button>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="citas">No hay citas creadas aun</p>
+            <a href="/citas/crear" class="btn btn-success btn-block">Crea una Cita</a>
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,53 @@
+  
+   <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-left">
+        <div class="container d-flex align-items-left justify-content-between">
+
+            <div class="logo">
+                <h6 class="text-light "><a class="navbar-brand" href="#">
+                        <img id="logo" class="logonav" src="../../img/logo2.png">
+                    </a><a href="/" id="titulo"><span>SAN VICENTE DE PAUL</span></a></h6>
+            </div>
+
+            <nav id="navbar" class="navbar ">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="/">Inicio</a></li>
+                    <li><a class="nav-link scrollto" href="/aboutUs">Nosotros</a></li>
+                    <li><a class="nav-link scrollto" href="/Services">Servicios</a></li>
+                    <li><a class="nav-link scrollto" href="/contactUs">Contacto</a></li>
+                    {{#if user}}
+                             <div class="separador" style="padding: 1rem;" >
+                        <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDrropwdown"
+                        role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Citas
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/citas">Todas las citas</a>
+                            <a class="dropdown-item" href="/citas/crear">Crear Cita</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/users/logout"> Salir</a>
+                        </div>
+                        </a>
+                    </li>
+                    </ul>
+                    </div>
+
+                    {{else}}
+
+                     <li><a class="nav-link getstarted  scrollto" href="/users/signin">Iniciar Sesion</a></li>
+                     
+                    {{/if}}
+                   
+                    
+
+                   
+                  </ul>
+                <!-- <img src="src/img/ico/menu.png" class="bi bi-list mobile-nav-toggle"></img> -->
+                
+            </nav><!-- .navbar -->
+
+        </div>
+    </header>
+    </div><!-- End Header -->
