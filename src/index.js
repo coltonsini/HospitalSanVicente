@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./database');
 
 const express = require("express");
 const path = require('path');
@@ -11,7 +12,6 @@ const passport = require('passport');
 
 // Inicializaciones
 const app = express();
-require('./database');
 require('./config/passport');
 
 // Settings
