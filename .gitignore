@@ -1,3 +1,4 @@
-#nodefiles
+# nodefiles
+**/.env
 **/node_modules/**
 **/package-lock.json
