@@ -1,6 +1,3 @@
-require('dotenv').config();
-require('./database');
-
 const express = require("express");
 const path = require('path');
 const handle = require('express-handlebars');
@@ -8,14 +5,16 @@ const method0verride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-
+require('dotenv').config();
 
 // Inicializaciones
 const app = express();
+require('./database');
 require('./config/passport');
 
 // Settings
-app.use(express.static(path.join(__dirname, 'public')));
+
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', handle({
@@ -34,6 +33,7 @@ app.use(session({
     resave: true,
     saveUnitialized: true
 })) 
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -54,6 +54,7 @@ app.use(require('./routes/users'));
 
 // Static Files
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 // iniciar servidor
 
